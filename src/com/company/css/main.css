@@ -1,0 +1,71 @@
+body {
+	margin-left:10%;
+	margin-right:10%;
+	margin-top:3%;
+	margin-bottom:3%;
+	text-align:center;
+	background-color:gray;
+	}
+.container {
+	background-color:white;
+	}
+.header{background-color:black;}
+h1 {
+	size:20px;
+	}
+/* Style the top navigation bar */
+.navibar {
+  overflow: hidden;
+  background-color: #333;
+}
+/* Style the topnav links */
+.navibar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Change color on hover */
+.navibar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: center;
+    width: 100%;
+  }
+}
+.navibar > a {
+	background-color:black;
+	padding-left:3%;
+	padding-right:3%;
+	padding-bottom:1%;
+	padding-top:1%;
+	color:white;
+	}
+.link:hover
+	{
+	background-color: #555;
+	color: white;
+	}
+.body {
+	text-align:justify;
+	margin-left:3%;
+	margin-right:3%;
+	}
+.footer {
+	color:gray;
+	font-size:9px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="css/main.css">
+    <script src = "js/dragondata.js"></script>
+    <title>Title</title>
+</head>
+<style>
+img{width:50px;}
+</style>
+<script>
+function initialize() {
+	mainImage = document.getElementById("mainimg");
+	captionOutput = document.getElementById("caption");
+	blurbOutput = document.getElementById("blurb");
+
+	dragonList = [];
+	currentDragonIdx = 0;
+
+	buildData();
+	setThumbnails();
+
+	display();
+}
+
+function buildData() {
+	var dragonNames = dragons.split(";");
+	var dragonBlurbs = dragoninfo.split(";");
+	var dragonImageFiles = dragonimages.split(";");
+
+	for (var i = 0; i < dragonNames.length; i++)
+	{
+		var dragon = {};
+		dragon.dragonName = dragonNames[i];
+		dragon.dragonBlurb = dragonBlurbs[i];
+		dragon.dragonImage = dragonImageFiles[i];
+
+		dragonList.push(dragon);
+	}
+	}
+
+function setThumbnails() {
+	var dragonThumbs = document.getElementsByClassName("thumb");
+	var dragonImageFiles = dragonimages.split(";");
+
+	for (var i = 0; i < dragonThumbs.length; i++)
+		dragonThumbs[i].src = "images/" + dragonImageFiles[i];
+	}
+
+function selectDragon(idx) {
+		currentDragonIdx = idx;
+		display();
+	}
+
+function display()	{
+	mainImage.src = "images/" + dragonList[currentDragonIdx].dragonImage;
+	captionOutput.innerHTML = dragonList[currentDragonIdx].dragonName;
+	blurbOutput.innerHTML = dragonList[currentDragonIdx].dragonBlurb;
+}
+</script>
+<body onload = "initialize();">
+<div class = "container">
+
+    <div class = "header">
+        this
+    </div>
+
+    <div class = "navibar">
+        <a href = "" class = "link">linkkkkkkkk</a>
+        <a href = "" class = "link">linkkkkkkk</a>
+        <a href = "" class = "link">linkkkkkkkk</a>
+        <a href = "" class = "link">linkkkkk</a>
+        <a href = "" class = "link">link</a>
+    </div>
+
+    <hr>
+
+    <div class = "body">
+        <br />
+        help
+
+        <div class="grid-container">
+            <div class="item1">1</div>
+            <div class="item2">2</div>
+            <div class="item3">3</div>
+            <div class="item4">4</div>
+            <div class="item5">5</div>
+            <div class="item6">6</div>
+            <div class="item7">7</div>
+            <div class="item8">8</div>
+        </div>
+
+        <div>
+            <img id = "mainimg" />
+            <div id = "caption"></div>
+            <div id = "blurb"></div>
+            <hr />
+            <img class = "thumb" onclick = "selectDragon(0);" />
+            <img class = "thumb" onclick = "selectDragon(1);" />
+            <img class = "thumb" onclick = "selectDragon(2);" />
+            <img class = "thumb" onclick = "selectDragon(3);" />
+            <img class = "thumb" onclick = "selectDragon(4);" />
+            <img class = "thumb" onclick = "selectDragon(5);" />
+        </div>
+
+    </div>
+
+    <div class = "footer">
+        insert text here
+    </div>
+
+</div>
+</body>
+</html>
+
+<!--
+<a href = ""><img class = "main" src = "img/banner.png" height = 130px /></a>
+-->
